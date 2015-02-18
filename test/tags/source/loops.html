@@ -1,0 +1,59 @@
+<loops>
+
+  <template>
+    <h2>Loops</h2>
+
+    <h3>Arrays of Objects</h3>
+    <ul>
+      <li each="arrOfObjs">${name}</li>
+    </ul>
+
+    <h3>Arrays of Non-Object values</h3>
+    <ul>
+      <li each="name in arrOfNonObjs">${name}</li>
+    </ul>
+
+    <h3>Key value of Arrays</h3>
+    <ul>
+      <li each="key, val in arrOfNonObjs">${key} =&gt; ${val}</li>
+    </ul>
+
+    <h3>Objects</h3>
+    <ul>
+      <li each="key, val in obj">${key} =&gt; ${val}</li>
+    </ul>
+  </template>
+
+  <script>
+    var arrOfObjs = [
+      {name: 'One'},
+      {name: 'Two'},
+      {name: 'Three'}
+    ];
+
+    var arrOfNonObjs = ['One', 'Two', 'Three'];
+
+    var obj = {
+      1: 'One',
+      2: 'Two',
+      3: 'Three'
+    };
+
+    function update() {
+      tag.update({
+        arrOfObjs: arrOfObjs,
+        arrOfNonObjs: arrOfNonObjs,
+        obj: obj,
+        mung: 'face'
+      });
+    }
+
+    update();
+
+    setTimeout(() => {
+      arrOfObjs.push({ name: 'Four' });
+      update();
+    }, 2000);
+  </script>
+
+</loops>
