@@ -25,35 +25,26 @@
   </template>
 
   <script>
-    var arrOfObjs = [
+    tag.arrOfObjs = [
       {name: 'One'},
       {name: 'Two'},
       {name: 'Three'}
     ];
 
-    var arrOfNonObjs = ['One', 'Two', 'Three'];
+    tag.arrOfNonObjs = ['One', 'Two', 'Three'];
 
-    var obj = {
+    tag.obj = {
       1: 'One',
       2: 'Two',
       3: 'Three'
     };
 
-    function update() {
-      tag.update({
-        arrOfObjs: arrOfObjs,
-        arrOfNonObjs: arrOfNonObjs,
-        obj: obj,
-        mung: 'face'
-      });
-    }
-
-    update();
-
+    /*
     setTimeout(() => {
-      arrOfObjs.push({ name: 'Four' });
-      update();
+      tag.arrOfObjs.push({ name: 'Four' });
+      tag.update();
     }, 2000);
+    */
   </script>
 
 </loops>

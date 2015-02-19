@@ -1,0 +1,23 @@
+<inner-nest>
+  <template>
+    <p>${message}</p>
+  </template>
+
+  <script>
+    tag.message = 'Hurrah!';
+    setTimeout(() => {
+      tag.update({ message: 'Hmm' });
+    }, 1000);
+  </script>
+</inner-nest>
+
+<nested>
+  <template>
+    <h2>Nested</h2>
+    <inner-nest></inner-nest>
+  </template>
+
+  <script>
+    setTimeout(tag.update.bind(tag), 2000);
+  </script>
+</nested>

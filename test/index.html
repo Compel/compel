@@ -9,20 +9,22 @@
       <script src="https://raw.githubusercontent.com/jonathantneal/EventListener/master/EventListener.js"></script>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script>
-        html5.addElements('variables loops');
+        html5.addElements('variables loops nested inner-nest');
       </script>
     <![endif]-->
   </head>
   <body>
     <variables></variables>
     <loops></loops>
-    <p>Test</p>
+    <nested></nested>
     <script src="../build/scomp.js"></script>
     <script src="tags/build/variables.js"></script>
     <script src="tags/build/loops.js"></script>
+    <script src="tags/build/nested.js"></script>
     <script>
       scomp.Tag.mount('variables');
       scomp.Tag.mount('loops');
+      scomp.Tag.mount('nested');
     </script>
   </body>
 </html>
