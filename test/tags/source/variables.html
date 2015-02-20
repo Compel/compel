@@ -2,12 +2,16 @@
 
   <template>
     <h2>Variable!</h2>
-    <p>This is the ${name} tag</p>
+    <ul>
+      <li>name = ${name}</li>
+      <li>getName() = ${getName()}</li>
+    </ul>
   </template>
 
   <script>
-    tag.name = '"Wait just a second..."';
-    setTimeout(() => tag.update({ name: 'Mung'}), 1000);
+    scope.name = '"Wait just a second..."';
+    scope.getName = () => scope.name;
+    setTimeout(() => scope.update({ name: 'Mung'}), 1000);
   </script>
 
 </variables>

@@ -10,38 +10,43 @@
 
     <h3>Arrays of Non-Object values</h3>
     <ul>
-      <li each="name in arrOfNonObjs">${name}</li>
+      <li each="name in arr">${name}</li>
     </ul>
 
     <h3>Key value of Arrays</h3>
     <ul>
-      <li each="key, val in arrOfNonObjs">${key} =&gt; ${val}</li>
+      <li each="key, val in arr">${key} =&gt; ${val}</li>
     </ul>
 
     <h3>Objects</h3>
     <ul>
       <li each="key, val in obj">${key} =&gt; ${val}</li>
     </ul>
+
+    <h3>Retreiving parent properties</h3>
+    <ul>
+      <li each="key, val in obj">${parent.obj[key]}</li>
+    </ul>
   </template>
 
   <script>
-    tag.arrOfObjs = [
+    scope.arrOfObjs = [
       {name: 'One'},
       {name: 'Two'},
       {name: 'Three'}
     ];
 
-    tag.arrOfNonObjs = ['One', 'Two', 'Three'];
+    scope.arr = ['One', 'Two', 'Three'];
 
-    tag.obj = {
+    scope.obj = {
       1: 'One',
       2: 'Two',
       3: 'Three'
     };
 
     setTimeout(() => {
-      tag.arrOfObjs.push({ name: 'Four' });
-      tag.update();
+      scope.arrOfObjs.push({ name: 'Four' });
+      scope.update();
     }, 2000);
   </script>
 

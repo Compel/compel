@@ -10,3 +10,4 @@ function build(name) {
 build('variables');
 build('loops');
 build('nested');
+build('options');
