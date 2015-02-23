@@ -3,13 +3,27 @@
   <template>
     <h2>Event Listeners</h2>
     <p>
-      <a onclick="onAction" href="#">Click and <span bind="action"></span></a>
+      <a onclick="log" href="#">Click and <span bind="action"></span></a>
+    </p>
+    <p>
+      <input type="text" onkeypress="log"/>
+    </p>
+    <p>
+      <label>
+        <input type="radio" onchange="log" name="foobar" value="foo"/>
+        Foo
+      </label>
+      <label>
+        <input type="radio" onchange="log" name="foobar" value="bar"/>
+        Bar
+      </label>
     </p>
   </template>
 
   <script>
     scope.action = 'wait';
     scope.onAction = () => alert(scope.action) && false;
+    scope.log = (e) => console.log(e);
     setTimeout(() => scope.update({action: 'see'}), 4000);
   </script>
 
