@@ -5,27 +5,37 @@
 
     <h3>Arrays of Objects</h3>
     <ul>
-      <li each="arrOfObjs">${name}</li>
+      <li each="arrOfObjs" bind="name"></li>
     </ul>
 
     <h3>Arrays of Non-Object values</h3>
     <ul>
-      <li each="name in arr">${name}</li>
+      <li each="name in arr" bind="name"></li>
     </ul>
 
     <h3>Key value of Arrays</h3>
     <ul>
-      <li each="key, val in arr">${key} =&gt; ${val}</li>
+      <li each="key, val in arr" data-scope>
+        <span bind="key"></span>
+        =&gt;
+        <span bind="val"></span>
+      </li>
     </ul>
+
+    <span bind="mung"></span>
 
     <h3>Objects</h3>
     <ul>
-      <li each="key, val in obj">${key} =&gt; ${val}</li>
+      <li each="key, val in obj">
+        <span bind="key"></span>
+        =&gt;
+        <span bind="val"></span>
+      </li>
     </ul>
 
     <h3>Retreiving parent properties</h3>
     <ul>
-      <li each="key, val in obj">${parent.obj[key]}</li>
+      <li each="key, val in obj" bind="parent.obj[key]"></li>
     </ul>
   </template>
 
