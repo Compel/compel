@@ -1,0 +1,16 @@
+<event-listeners>
+
+  <template>
+    <h2>Event Listeners</h2>
+    <p>
+      <a onclick="onAction" href="#">Click and <span bind="action"></span></a>
+    </p>
+  </template>
+
+  <script>
+    scope.action = 'wait';
+    scope.onAction = () => alert(scope.action) && false;
+    setTimeout(() => scope.update({action: 'see'}), 4000);
+  </script>
+
+</event-listeners>

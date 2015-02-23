@@ -19,6 +19,9 @@
   "globals": {
     "tag": false,
     "scomp": false,
+    "scope": false,
+    "alert": false,
+    "root": false,
     "process": false,
     "describe": false,
     "it": false,
