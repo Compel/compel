@@ -8,9 +8,6 @@
       <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.0/es5-sham.min.js"></script>
       <script src="https://raw.githubusercontent.com/jonathantneal/EventListener/master/EventListener.js"></script>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script>
-        html5.addElements('variables loops nested inner-nest options');
-      </script>
     <![endif]-->
   </head>
   <body>
@@ -25,12 +22,6 @@
     <script src="tags/build/nested.js"></script>
     <script src="tags/build/options.js"></script>
     <script src="tags/build/event-listeners.js"></script>
-    <script>
-      scomp.Tag.mount('variables');
-      scomp.Tag.mount('loops');
-      scomp.Tag.mount('nested');
-      scomp.Tag.mount('options');
-      scomp.Tag.mount('event-listeners');
-    </script>
+    <script>scomp.load();</script>
   </body>
 </html>
