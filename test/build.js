@@ -12,3 +12,4 @@ build('loops');
 build('nested');
 build('options');
 build('event-listeners');
+build('overriding-attributes');

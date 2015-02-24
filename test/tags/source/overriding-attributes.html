@@ -1,0 +1,14 @@
+<overriding-attributes>
+
+  <template>
+    <h2>Overriding Attributes</h2>
+    <p scomp-style="getStyle()">I should be <span bind="color"></span></p>
+  </template>
+
+  <script>
+    scope.color = 'red';
+    scope.getStyle = () => `color:${scope.color};`;
+    setTimeout(() => scope.update({color: 'blue'}), 1000);
+  </script>
+
+</overriding-attributes>
