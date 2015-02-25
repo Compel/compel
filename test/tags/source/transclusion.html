@@ -1,0 +1,27 @@
+<transclude-here>
+
+  <template>
+    <h2>Transclusion</h2>
+    <div style="background-color:#ccc;" transclude></div>
+  </template>
+
+  <script>
+  </script>
+
+</transclude-here>
+
+
+<transclusion>
+
+  <template>
+    <transclude-here>
+      <p>Hey there <span bind="name"></span>, I should be in a grey box</p>
+    </transclude-here>
+  </template>
+
+  <script>
+    scope.name = 'John';
+    setTimeout(() => scope.update({ name: 'Terry' }), 1000);
+  </script>
+
+</transclusion>

@@ -13,3 +13,4 @@ build('nested');
 build('options');
 build('event-listeners');
 build('overriding-attributes');
+build('transclusion');
