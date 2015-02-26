@@ -1,6 +1,8 @@
 <inner-nest>
   <template>
+    <p bind="something"></p>
     <p bind="message"></p>
+    <p bind="somethingElse"></p>
   </template>
 
   <script>
@@ -12,10 +14,11 @@
 <nested>
   <template>
     <h2>Nested</h2>
-    <inner-nest></inner-nest>
+    <inner-nest scomp-something="something" something-else="face"></inner-nest>
   </template>
 
   <script>
-    setTimeout(scope.update.bind(scope), 2000);
+    scope.something = 'mung';
+    setTimeout(() => scope.update({ something: 'face' }))
   </script>
 </nested>

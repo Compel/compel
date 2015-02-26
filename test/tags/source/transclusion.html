@@ -1,27 +1,27 @@
-<transclude-here>
+<form-group>
 
   <template>
-    <h2>Transclusion</h2>
-    <div style="background-color:#ccc;" transclude></div>
+    <h2>A form component</h2>
+    <div class="form-group">
+      <label bind="label"></label>
+      <div transclude></div>
+    </div>
+  </template>
+
+</form-group>
+
+
+<text-module>
+
+  <template>
+    <form-group label="Some text please">
+      <input type="text" scomp-value="value"/>
+    </form-group>
   </template>
 
   <script>
+    scope.value = "Here's some mother fucking text!";
+    setTimeout(() => scope.update({ value: 'Yeh baby!!!' }), 3000);
   </script>
 
-</transclude-here>
-
-
-<transclusion>
-
-  <template>
-    <transclude-here>
-      <p>Hey there <span bind="name"></span>, I should be in a grey box</p>
-    </transclude-here>
-  </template>
-
-  <script>
-    scope.name = 'John';
-    setTimeout(() => scope.update({ name: 'Terry' }), 1000);
-  </script>
-
-</transclusion>
+</text-module>
