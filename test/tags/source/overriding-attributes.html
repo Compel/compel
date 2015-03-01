@@ -2,13 +2,22 @@
 
   <template>
     <h2>Overriding Attributes</h2>
-    <p scomp-style="getStyle()">I should be <span bind="color"></span></p>
+    <style>
+      .color.red { color: red; }
+      .color.blue { color: blue; }
+    </style>
+    <p compel-style="getStyle()">I should be <span bind="color"></span></p>
+    <i compel-class="getClassNames()">I should be <span bind="color"></span></i>
+    <input type="text" compel-required="required" compel-value="color"/>
   </template>
 
   <script>
     scope.color = 'red';
+    scope.required = false;
     scope.getStyle = () => `color:${scope.color};`;
-    setTimeout(() => scope.update({color: 'blue'}), 1000);
+    scope.getClassNames = () => ['color', scope.color];
+    scope.getValue = () => scope.required ? 'I should be required' : "I'm not required";
+    setTimeout(() => scope.update({ color: 'blue', required: true }), 1000);
   </script>
 
 </overriding-attributes>

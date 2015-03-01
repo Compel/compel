@@ -12,10 +12,10 @@ gulp.task('build', () => {
   return gulp
     .src(joinPath(__dirname, 'lib', 'browser', 'index.js'))
     .pipe(sourcemaps.init())
-    .pipe(rename('scomp.js'))
+    .pipe(rename('compel.js'))
     .pipe(browserify({
       transform: babelify,
-      standalone: 'scomp'
+      standalone: 'compel'
     }))
     .on('error', console.error)
     .pipe(sourcemaps.write({includeContent: true}))
@@ -24,8 +24,8 @@ gulp.task('build', () => {
 
 gulp.task('min', ['build'], () => {
   return gulp
-    .src(joinPath(BUILD_DIR, 'scomp.js'))
-    .pipe(rename('scomp.min.js'))
+    .src(joinPath(BUILD_DIR, 'compel.js'))
+    .pipe(rename('compel.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest(BUILD_DIR));
 });

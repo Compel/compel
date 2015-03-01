@@ -1,10 +1,10 @@
 require('babel/register');
 require('../lib/compiler/plugins/babel');
 
-var scomp = require('../');
+var compel = require('../');
 
 function build(name) {
-  scomp.parseFile(__dirname+'/tags/source/'+name+'.html', __dirname+'/tags/build/'+name+'.js');
+  compel.parseFile(__dirname+'/tags/source/'+name+'.html', __dirname+'/tags/build/'+name+'.js');
 }
 
 build('variables');

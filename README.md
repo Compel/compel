@@ -1,5 +1,5 @@
-Scomp
-=====
+Compel
+======
 
 Inspired by the delights of REACT, but not it's syntax.
 
@@ -38,9 +38,9 @@ Compile and use it...
     <my-new-component></my-new-component>
     <my-new-component name="Terry Wogan"></my-new-component>
 
-    <script src="scomp.js"></script>
+    <script src="compel.js"></script>
     <script src="my-new-component.js"></script>
-    <script>scomp.load()</script>
+    <script>compel.load()</script>
   </body>
 </html>
 ```
@@ -156,14 +156,14 @@ Bind an element to an array or key/value pairs:
 </ul>
 ```
 
-### `scomp-*`
+### `compel-*`
 
-Scomp bloody anything! Any attribute beginning with `scomp-` will bind the
+Compel bloody anything! Any attribute beginning with `compel-` will bind the
 expression and replace it's referencing attribute. E.g:
 
 ```html
 <template>
-  <p scomp-class="someDynamicClassName" scomp-style="someDynamicStyle"></p>
+  <p compel-class="someDynamicClassName" compel-style="someDynamicStyle"></p>
 </template>
 <script>
   scope.someDynamicClassName = 'my-class';
@@ -179,5 +179,5 @@ expression and replace it's referencing attribute. E.g:
 Installation
 ------------
 
-- Install the compiler with node: `npm i scomp`.
+- Install the compiler with node: `npm i compel`.
 - ...

@@ -17,7 +17,7 @@
   "smarttabs": true,
   "globals": {
     "tag": false,
-    "scomp": false,
+    "compel": false,
     "scope": false,
     "alert": false,
     "root": false,
