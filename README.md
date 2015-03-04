@@ -1,3 +1,5 @@
+**Warning!!! This is in mega Aplha stage. Feel free to muck around with it, but it's far from being production ready.**
+
 Compel
 ======
 
