@@ -156,14 +156,14 @@ Bind an element to an array or key/value pairs:
 </ul>
 ```
 
-### `compel-*`
+### `bind-*`
 
-Compel bloody anything! Any attribute beginning with `compel-` will bind the
+Compel bloody anything! Any attribute beginning with `bind-` will bind the
 expression and replace it's referencing attribute. E.g:
 
 ```html
 <template>
-  <p compel-class="someDynamicClassName" compel-style="someDynamicStyle"></p>
+  <p bind-class="someDynamicClassName" bind-style="someDynamicStyle"></p>
 </template>
 <script>
   scope.someDynamicClassName = 'my-class';

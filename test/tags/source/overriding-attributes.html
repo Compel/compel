@@ -6,9 +6,9 @@
       .color.red { color: red; }
       .color.blue { color: blue; }
     </style>
-    <p compel-style="getStyle()">I should be <span bind="color"></span></p>
-    <i compel-class="getClassNames()">I should be <span bind="color"></span></i>
-    <input type="text" compel-required="required" compel-value="color"/>
+    <p bind-style="getStyle()">I should be <span bind="color"></span></p>
+    <i bind-class="getClassNames()">I should be <span bind="color"></span></i>
+    <input type="text" bind-required="required" bind-value="color"/>
   </template>
 
   <script>
