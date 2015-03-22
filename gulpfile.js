@@ -1,2 +1,2 @@
 require('babel/register');
-require('./gulpfile.es6');
+require('./gulpfile.es');
