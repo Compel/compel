@@ -3,17 +3,17 @@
   <template>
     <h2>Loops</h2>
 
-    <h3>Arrays of Objects</h3>
+    <h3>Logicless looping</h3>
     <ul>
       <li each="arrOfObjs" bind="name"></li>
     </ul>
 
-    <h3>Arrays of Non-Object values</h3>
+    <h3>Each-in looping</h3>
     <ul>
       <li each="name in arr" bind="name"></li>
     </ul>
 
-    <h3>Key value of Arrays</h3>
+    <h3>Each key/value array looping</h3>
     <ul>
       <li each="key, val in arr">
         <span bind="key"></span>
@@ -22,7 +22,7 @@
       </li>
     </ul>
 
-    <h3>Objects</h3>
+    <h3>Each key/value object looping</h3>
     <ul>
       <li each="key, val in obj">
         <span bind="key"></span>
@@ -54,6 +54,8 @@
 
     setTimeout(() => {
       scope.arrOfObjs.push({ name: 'Four' });
+      scope.arr.push('Four');
+      scope.obj[4] = 'Four';
       scope.update();
     }, 2000);
   </script>
