@@ -17,6 +17,7 @@
   "smarttabs": true,
   "globals": {
     "tag": false,
+    "html5": false,
     "compel": false,
     "scope": false,
     "alert": false,
