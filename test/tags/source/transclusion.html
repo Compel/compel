@@ -1,27 +1,28 @@
 <form-group>
-
   <template>
     <h2>A form component</h2>
     <div class="form-group">
       <label bind="label"></label>
+      <p bind="oncePlease"></p>
       <div transclude></div>
     </div>
   </template>
-
 </form-group>
 
 
 <text-module>
-
   <template>
     <form-group label="Some text please">
+      <p bind="oncePlease"></p>
       <input type="text" bind-value="value"/>
     </form-group>
   </template>
 
   <script>
     scope.value = "Here's some mother fucking text!";
-    setTimeout(() => scope.update({ value: 'Yeh baby!!!' }), 3000);
+    setTimeout(() => scope.update({
+      value: 'Yeh baby!!!',
+      oncePlease: 'You should only see me oncce!!'
+    }), 3000);
   </script>
-
 </text-module>

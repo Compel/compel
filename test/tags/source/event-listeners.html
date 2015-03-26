@@ -23,7 +23,7 @@
   <script>
     scope.action = 'wait';
     scope.onAction = () => alert(scope.action) && false;
-    scope.log = (e) => console.log(e);
+    scope.log = e => console.log(e);
     setTimeout(() => scope.update({action: 'see'}), 4000);
   </script>
 

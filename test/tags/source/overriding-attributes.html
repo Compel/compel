@@ -5,10 +5,11 @@
     <style>
       .color.red { color: red; }
       .color.blue { color: blue; }
+      .color.green { color: green; }
     </style>
     <p bind-style="getStyle()">I should be <span bind="color"></span></p>
     <i bind-class="getClassNames()">I should be <span bind="color"></span></i>
-    <input type="text" bind-required="required" bind-value="color"/>
+    <input type="text" bind-required="!!required" bind-value="color" onkeyup="handleKeyUp"/>
   </template>
 
   <script>
@@ -16,8 +17,14 @@
     scope.required = false;
     scope.getStyle = () => `color:${scope.color};`;
     scope.getClassNames = () => ['color', scope.color];
-    scope.getValue = () => scope.required ? 'I should be required' : "I'm not required";
+
     setTimeout(() => scope.update({ color: 'blue', required: true }), 1000);
+
+    scope.handleKeyUp = e => {
+      scope.update({
+        color: e.target.value
+      });
+    };
   </script>
 
 </overriding-attributes>
