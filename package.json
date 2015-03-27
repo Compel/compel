@@ -6,10 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "compel": "bin/compel.js"
+  },
   "author": "John Wright <johngeorge.wright@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^0.18.0"
+    "cheerio": "^0.18.0",
+    "commander": "^2.7.1",
+    "html-minifier": "^0.7.0",
+    "require-dir": "^0.3.0"
   },
   "repository": {
     "type": "git",
