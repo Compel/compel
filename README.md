@@ -13,6 +13,7 @@ Dive in, the water's lovely
 Create a component...
 
 ```html
+<!-- my-component.html -->
 <my-new-component>
 
   <template>
@@ -29,7 +30,15 @@ Create a component...
 </my-new-component>
 ```
 
-Compile and use it...
+Compile it...
+
+```sh
+$> compel my-component.html
+
+my-component.html ==> my-component.js
+```
+
+Use it...
 
 ```html
 <html>
@@ -41,6 +50,7 @@ Compile and use it...
     <my-new-component name="Terry Wogan"></my-new-component>
 
     <script src="compel.js"></script>
+    <!-- Include the compiled JS file -->
     <script src="my-new-component.js"></script>
     <script>compel.load()</script>
   </body>
@@ -178,8 +188,23 @@ expression and replace it's referencing attribute. E.g:
 <p class="my-class" style="color:red;"></p>
 ```
 
+CLI
+---
+
+```
+  Usage: compel [options] source <destination>
+
+  Options:
+
+    -h, --help                output usage information
+    -V, --version             output the version number
+    -o, --output [directory]  A directory to put the compiled output. Default is the same as the source
+    --babel                   Compile component scripts with babel.js
+    --html-minifier           Minifies HTML
+```
+
 Installation
 ------------
 
 - Install the compiler with node: `npm i compel`.
-- ...
+- ... to be continued
