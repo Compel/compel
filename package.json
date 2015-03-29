@@ -14,8 +14,10 @@
   "dependencies": {
     "cheerio": "^0.18.0",
     "commander": "^2.7.1",
+    "fs-extra": "^0.17.0",
     "html-minifier": "^0.7.0",
-    "require-dir": "^0.3.0"
+    "require-dir": "^0.3.0",
+    "walk": "^2.3.9"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,7 @@
   "devDependencies": {
     "babel": "^4.1.1",
     "babelify": "^5.0.3",
-    "globule": "git+https://github.com/johngeorgewright/node-globule.git#lodash-upgrade",
+    "globule": "git+https://github.com/MyMedsAndMe/node-globule.git#lodash-upgrade",
     "gulp": "^3.8.11",
     "gulp-browserify": "^0.5.1",
     "gulp-rename": "^1.2.0",
