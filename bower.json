@@ -1,0 +1,27 @@
+{
+  "name": "compel",
+  "main": "build/compel.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Compel/compel",
+  "authors": [
+    "John Wright <johngeorge.wright@gmail.com>"
+  ],
+  "description": "A reactive programming framework in JavaScript",
+  "keywords": [
+    "reactive",
+    "framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "es5-shim": "~4.1.0",
+    "event-listener-polyfill": "~1.0.0",
+    "html5shiv": "~3.7.2"
+  }
+}

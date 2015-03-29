@@ -74,6 +74,51 @@ Output looks something like:
 </html>
 ```
 
+IE8
+---
+
+Yep, this will work in IE8 too. But you need to add an extra file, in the head
+of your document and before the `compel.js` include.
+
+```html
+<html>
+  <head>
+    <script src="compel-ie8.js"></script>
+  </head>
+  <body>
+    <script src="compel.js"></script>
+    <script src="my-components.js"></script>
+  </body>
+</html>
+```
+
+Or... you can include each dependency yourself:
+
+- ES5 Shim
+- ES5 Sham
+- EentListener Polyfill
+- HTML5Shiv
+
+You'll also need to declare all your components at in the head of your document
+like so:
+
+```html
+<html>
+  <head>
+    <script src="ccompel-ie8.js"></script>
+    <!--[if lte IE 8 ]>
+      <script>
+        html5.addElements('my-component, my-other-component');
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+    <my-component></my-component>
+    <script src="compel.js"></script>
+  </body>
+</html>
+```
+
 Attributes
 ----------
 
@@ -207,4 +252,3 @@ Installation
 ------------
 
 - Install the compiler with node: `npm i compel`.
-- ... to be continued
