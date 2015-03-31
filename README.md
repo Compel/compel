@@ -297,7 +297,7 @@ HTML event handlers (any attribute beginning with "on") will attach to the scope
 <click-counter>
   <template>
     <a onclick="handleClick">Click me</a>
-    <p>I've been clicked <span bind="clicked"></span></p>
+    <p>I've been clicked <span bind="clicked"></span> times</p>
   </template>
   <script>
     scope.clicked = 0;
