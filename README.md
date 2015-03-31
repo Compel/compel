@@ -289,6 +289,26 @@ Using `<text-module></text-module>` would compile to ...
 </div>
 ```
 
+### `on*`
+
+HTML event handlers (any attribute beginning with "on") will attach to the scope too.
+
+```html
+<click-counter>
+  <template>
+    <a onclick="handleClick">Click me</a>
+    <p>I've been clicked <span bind="clicked"></span></p>
+  </template>
+  <script>
+    scope.clicked = 0;
+    scope.handleClick = function (e) {
+      scope.clicked++;
+      scope.update();
+    };
+  </script>
+</click-counter>
+```
+
 Scope
 -----
 
