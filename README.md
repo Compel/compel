@@ -119,6 +119,21 @@ like so:
 </html>
 ```
 
+CLI
+---
+
+```
+  Usage: compel [options] source <destination>
+
+  Options:
+
+    -h, --help                output usage information
+    -V, --version             output the version number
+    -o, --output [directory]  A directory to put the compiled output. Default is the same as the source
+    --babel                   Compile component scripts with babel.js
+    --html-minifier           Minifies HTML
+```
+
 Attributes
 ----------
 
@@ -233,19 +248,108 @@ expression and replace it's referencing attribute. E.g:
 <p class="my-class" style="color:red;"></p>
 ```
 
-CLI
----
+### `transclude`
 
+Transclusion is essentially using given HTML (a bit like an attribute) somewhere in a component.
+
+Any script registered with the transcluded document will still be bound in the original declaration.
+
+```html
+<labeled-input>
+  <template>
+    <div class="form-group">
+      <label bind-for="id" bind="label"></label>
+      <div transclude></div>
+    </div>
+  </template>
+</labeled-input>
+
+<text-module>
+  <template>
+    <labeled-input id="text" label="Some text please">
+      <input type="text" name="text" id="text" onchange="registerChange"/>
+    </labeled-input>
+  </template>
+  <script>
+    scope.registerChange = function (e) {
+      // registering a change on the input
+    };
+  </script>
+</text-module>
 ```
-  Usage: compel [options] source <destination>
 
-  Options:
+... would compile to ...
 
-    -h, --help                output usage information
-    -V, --version             output the version number
-    -o, --output [directory]  A directory to put the compiled output. Default is the same as the source
-    --babel                   Compile component scripts with babel.js
-    --html-minifier           Minifies HTML
+```html
+<div class="form-group">
+  <label for="text">Some text please</label>
+  <div>
+    <input type="text" name="text" id="text"/>
+  </div>
+</div>
+```
+
+Scope
+-----
+
+The `scope` is a property available to all component scripts that opens access of your variables
+and functions to the template.
+
+```html
+<some-component>
+  <template>
+    <h1 bind="header"></h1>
+  </template>
+  <script>
+    scope.header = 'I am a header';
+  </script>
+</some-component>
+```
+
+In the above component, the `h1` tag is bound to a variable `header`, assigned to the scope.
+Let's try and use a function instead:
+
+```html
+<some-component>
+  <template>
+    <h1 bind="getHeader()"></h1>
+  </template>
+  <script>
+    scope.getHeader = function () {
+      return 'I am a header';
+    };
+  </script>
+</some-component>
+```
+
+### Updating
+
+To update the view at any given point, call the `update` method on the scope.
+
+```html
+<another-component>
+  <template>
+    <h1 bind="getHeader()"></h1>
+  </template>
+  <script>
+    var name = 'you';
+
+    scope.getHeader = function () {
+      return 'Hello ' + name;
+    };
+
+    setTimeout(function () {
+      name = 'John';
+      scope.update()
+    });
+  </script>
+</another-component>
+```
+
+Or, you can also pass a key/value pair to the update method as a shortcut:
+
+```javascript
+scope.update({name: 'John'});
 ```
 
 Installation
