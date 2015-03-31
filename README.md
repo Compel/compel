@@ -278,7 +278,7 @@ Any script registered with the transcluded document will still be bound in the o
 </text-module>
 ```
 
-... would compile to ...
+Using `<text-module></text-module>` would compile to ...
 
 ```html
 <div class="form-group">
